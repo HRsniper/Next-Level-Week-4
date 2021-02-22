@@ -22,3 +22,5 @@ iex> Rocketpay.Numbers.sum_from_file("numbers")
 {:ok, "1,2,3,4,8,9,10\n"}
 
 http://localhost:4000/api/numbers
+
+$ mix test
