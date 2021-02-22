@@ -18,7 +18,7 @@ defmodule Rocketpay.Numbers do
     result =
       result_file
       |> String.split(",")
-      |> Enum.map(fn number -> String.to_integer(number) end)
+      |> Stream.map(fn number -> String.to_integer(number) end)
       |> Enum.sum()
 
     # result # sempre última linha retorno da função
