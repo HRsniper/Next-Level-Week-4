@@ -13,7 +13,12 @@ $ mix credo gen.config
 inicie seu aplicativo Phoenix:
 $ mix phx.server
 
-executar seu aplicativo dentro do IEx (Interactive Elixir):
-$ iex -S mix phx.server
-
 http://localhost:4000/dashboard
+
+executar seu aplicativo dentro do IEx (Interactive Elixir):
+$ iex -S mix /ou/ iex -S mix phx.server
+
+iex> Rocketpay.Numbers.sum_from_file("numbers")
+{:ok, "1,2,3,4,8,9,10\n"}
+
+http://localhost:4000/api/numbers
