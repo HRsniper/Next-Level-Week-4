@@ -54,4 +54,15 @@ iex> Rocketpay.User.changeset(%{ name: "Hercules", age: "23", email: "HR@gmail.c
 
 ```
 #rumoaoproximonivel
+#jornadainfinita
 ```
+
+insomnia request
+post create_user http://localhost:4000/api/users
+{
+"name": "Hercules",
+"age": 23,
+"email":"HR1@gmail.com",
+"password":"12345",
+"nickname":"HRsniper"
+}
