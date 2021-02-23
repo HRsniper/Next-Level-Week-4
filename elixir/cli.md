@@ -31,6 +31,12 @@ $ mix ecto.gen.migration create_user_table
 Executa as migrações do repositório
 $ mix ecto.migrate
 
+Descarta o repositório
+$ mix ecto.drop
+
+$ mix ecto.create
+$ mix ecto.migrate
+
 ```
 #rumoaoproximonivel
 ```
