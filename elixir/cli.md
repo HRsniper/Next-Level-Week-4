@@ -25,6 +25,12 @@ http://localhost:4000/api/numbers
 
 $ mix test
 
+Gera uma nova migração para o repositório
+$ mix ecto.gen.migration create_user_table
+
+Executa as migrações do repositório
+$ mix ecto.migrate
+
 ```
 #rumoaoproximonivel
 ```
