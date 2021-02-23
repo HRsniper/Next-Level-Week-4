@@ -4,6 +4,7 @@ defmodule Rocketpay.User do
 
   # Os conjuntos de alterações permitem filtrar, lançar, validar e definir restrições ao manipular estruturas.
   import Ecto.Changeset
+  alias Ecto.Changeset
 
   @primary_key {:id, :binary_id, autogenerate: true}
 
@@ -11,7 +12,7 @@ defmodule Rocketpay.User do
     :name,
     :age,
     :email,
-    :password_hash,
+    :password,
     :nickname
   ]
 
@@ -19,8 +20,11 @@ defmodule Rocketpay.User do
     field :name, :string
     field :age, :integer
     field :email, :string
+    field :password, :string, virtual: true
     field :password_hash, :string
     field :nickname, :string
+    
+    timestamps()
   end
 
   def changeset(params) do
@@ -30,11 +34,19 @@ defmodule Rocketpay.User do
     |> validate_required(@required_params)
     |> validate_format(:email, ~r/@/)
     |> validate_inclusion(:age, 18..130)
-    |> validate_length(:password_hash, min: 5)
+    |> validate_length(:password, min: 5)
     |> unique_constraint([:email])
     |> unique_constraint([:nickname])
+    |> put_password_hash()
   end
+
+  defp put_password_hash(%Changeset{valid?: true, changes: %{password: password}} = changeset) do
+    change(changeset, Bcrypt.add_hash(password))
+  end
+
+  defp put_password_hash(changeset), do: changeset
 end
 
 # https://hexdocs.pm/ecto/3.5.8/Ecto.Schema.html#summary
 # https://hexdocs.pm/ecto/3.5.8/Ecto.Changeset.html#summary
+# https://hexdocs.pm/bcrypt_elixir/Bcrypt.html#summary
