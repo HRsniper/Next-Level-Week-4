@@ -37,6 +37,21 @@ $ mix ecto.drop
 $ mix ecto.create
 $ mix ecto.migrate
 
+iex> Rocketpay.User.changeset(%{ name: "Hercules", age: "23", email: "HR@gmail.com", password_hash: "hashed123", nickname: "HRsniper" })
+<!-- #Ecto.Changeset<
+  action: nil,
+  changes: %{
+    age: 23,
+    email: "HR@gmail.com",
+    name: "Hercules",
+    nickname: "HRsniper",
+    password_hash: "hashed123"
+  },
+  errors: [],
+  data: #Rocketpay.User<>,
+  valid?: true
+> -->
+
 ```
 #rumoaoproximonivel
 ```
