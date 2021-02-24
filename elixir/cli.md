@@ -55,6 +55,7 @@ iex> Rocketpay.User.changeset(%{ name: "Hercules", age: "23", email: "HR@gmail.c
 ```
 #rumoaoproximonivel
 #jornadainfinita
+#focopraticagrupo
 ```
 
 http://localhost:4000/api/users
@@ -68,3 +69,4 @@ $ mix ecto.migrate
 
 $ Rocketpay.create_user(%{name: "hr", age: 23, email: "w@w.com", password: "123456", nickname: "qewqweqw"})
 
+$  Rocketpay.deposit(%{"id" => "c0c85899-41be-4168-b652-28b27246cdca", "value" => "50.0"})
