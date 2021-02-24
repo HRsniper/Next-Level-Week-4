@@ -8,6 +8,7 @@
   "database": "nodenlw4",
   "schema": "public",
   "synchronize": false,
+  "logging": true,
   "entities": ["src/database/entities/**/*.ts"],
   "migrations": ["src/database/migrations/**/*.ts"],
   "subscribers": ["src/database/subscribers/**/*.ts"],
