@@ -65,3 +65,6 @@ iex> Rocketpay.Repo.all(Rocketpay.User)
 $ mix ecto.gen.migration create_accounts_table
 
 $ mix ecto.migrate
+
+$ Rocketpay.create_user(%{name: "hr", age: 23, email: "w@w.com", password: "123456", nickname: "qewqweqw"})
+

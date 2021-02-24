@@ -5,19 +5,16 @@ defmodule Rocketpay.Account do
   # Os conjuntos de alterações permitem filtrar, lançar, validar e definir restrições ao manipular estruturas.
   import Ecto.Changeset
 
-  # alias Ecto.Changeset
   alias Rocketpay.User
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
 
-  @required_params [
-    :balance,
-    :user_id
-  ]
+  @required_params [:balance, :user_id]
 
-  schema "users" do
+  schema "accounts" do
     field :balance, :decimal
+
     # Indica uma associação um para um ou muitos para um com outro esquema
     belongs_to :user, User
 
@@ -29,7 +26,7 @@ defmodule Rocketpay.Account do
     |> cast(params, @required_params)
     |> validate_required(@required_params)
     # Verifica se há uma restrição de verificação no campo fornecido.
-    |> check_constraint(:balance, :balance_must_be_positive_or_zero)
+    |> check_constraint(:balance, name: :balance_must_be_positive_or_zero)
   end
 end
 

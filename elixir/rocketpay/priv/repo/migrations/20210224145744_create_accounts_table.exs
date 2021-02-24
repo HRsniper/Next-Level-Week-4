@@ -5,7 +5,7 @@ defmodule Rocketpay.Repo.Migrations.CreateAccountsTable do
     create table :accounts do
       add :balance, :decimal
       # Define uma chave estrangeira.
-      add :use_id, references(:users, type: :binary_id)
+      add :user_id, references(:users, type: :binary_id)
 
       timestamps()
     end

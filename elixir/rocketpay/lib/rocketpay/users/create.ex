@@ -6,7 +6,7 @@ defmodule Rocketpay.Users.Create do
     # Retorna uma estrutura Ecto.Multi vazia
     Multi.new()
     # Adiciona uma operação de inserção ao multi.
-    |> Multi.insert(:crate_user, User.changeset(params))
+    |> Multi.insert(:create_user, User.changeset(params))
     # Adiciona uma função para ser executada como parte do multi.
     # A função deve retornar {:ok, value}ou {:error, value}
     |> Multi.run(:create_account, fn repo, %{create_user: user} ->
@@ -15,7 +15,7 @@ defmodule Rocketpay.Users.Create do
     |> Multi.run(:preload_data, fn repo, %{create_user: user} ->
       preload_data(repo, user)
     end)
-    |> run_transation()
+    |> run_transaction()
 
     # params
     # |> User.changeset()
@@ -30,6 +30,7 @@ defmodule Rocketpay.Users.Create do
 
   defp account_changeset(user_id) do
     params = %{user_id: user_id, balance: "0.00"}
+
     Account.changeset(params)
   end
 
@@ -37,7 +38,7 @@ defmodule Rocketpay.Users.Create do
     {:ok, repo.preload(user, :account)}
   end
 
-  defp run_transation(multi) do
+  defp run_transaction(multi) do
     # transação retorna o valor como {:ok, value} ou {:error, value}.
     case Repo.transaction(multi) do
       {:error, _operation, reason, _changes} -> {:error, reason}
