@@ -61,3 +61,7 @@ http://localhost:4000/api/users
 
 retorna todos usuarios do banco
 iex> Rocketpay.Repo.all(Rocketpay.User)
+
+$ mix ecto.gen.migration create_accounts_table
+
+$ mix ecto.migrate
