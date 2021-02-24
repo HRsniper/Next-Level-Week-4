@@ -58,3 +58,6 @@ iex> Rocketpay.User.changeset(%{ name: "Hercules", age: "23", email: "HR@gmail.c
 ```
 
 http://localhost:4000/api/users
+
+retorna todos usuarios do banco
+iex> Rocketpay.Repo.all(Rocketpay.User)
