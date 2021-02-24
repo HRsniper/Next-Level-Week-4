@@ -3,6 +3,9 @@ defmodule RocketpayWeb.UsersController do
 
   alias Rocketpay.User
 
+  # Registra o plug a ser chamado como um fallback para a ação do controlador.
+  action_fallback RocketpayWeb.FallbackController
+
   def create(connection, params) do
     params
     |> Rocketpay.create_user()
@@ -17,10 +20,7 @@ defmodule RocketpayWeb.UsersController do
     |> render("create.json", user: user)
   end
 
-  defp handle_response({:error, result}, connection) do
-    connection
-    |> put_status(:bad_request)
-    |> put_view(RocketpayWeb.ErrorView)
-    |> render("400.json", result: result)
-  end
+  defp handle_response({:error, _result} = error, _connection), do: error
 end
+
+# https://hexdocs.pm/phoenix/Phoenix.Controller.html#summary
