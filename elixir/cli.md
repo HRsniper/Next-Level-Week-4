@@ -56,6 +56,7 @@ iex> Rocketpay.User.changeset(%{ name: "Hercules", age: "23", email: "HR@gmail.c
 #rumoaoproximonivel
 #jornadainfinita
 #focopraticagrupo
+#nerverstoplearning
 ```
 
 http://localhost:4000/api/users
