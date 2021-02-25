@@ -1,9 +1,12 @@
+import React from "react";
 import { ExperienceBar } from "../components/ExperienceBar";
 
-export default function Home() {
+function Home() {
   return (
     <main className="container">
       <ExperienceBar />
     </main>
   );
 }
+
+export default Home;
