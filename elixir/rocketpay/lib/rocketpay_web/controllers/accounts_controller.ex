@@ -2,6 +2,7 @@ defmodule RocketpayWeb.AccountsController do
   use RocketpayWeb, :controller
 
   alias Rocketpay.Account
+  alias Rocketpay.Accounts.Transaction
 
   # Registra o plug a ser chamado como um fallback para a ação do controlador.
   action_fallback RocketpayWeb.FallbackController
@@ -20,6 +21,14 @@ defmodule RocketpayWeb.AccountsController do
       connection
       |> put_status(:ok)
       |> render("update.json", account: account)
+    end
+  end
+
+  def transaction(connection, params) do
+    with {:ok, %{} = transaction} <- Rocketpay.transaction(params) do
+      connection
+      |> put_status(:ok)
+      |> render("transaction.json", transaction: transaction)
     end
   end
 end
