@@ -1,21 +1,34 @@
 defmodule RocketpayWeb.Router do
   use RocketpayWeb, :router
 
+  import Plug.BasicAuth
+
   pipeline :api do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth do
+    plug :basic_auth, Application.compile_env(:rocketpay, :basic_auth)
+  end
+
   scope "/api", RocketpayWeb do
+    # pipe_through obedece as regras definidas no plug do pipeline
     pipe_through :api
 
     get "/:filename", WelcomeController, :index
 
     post "/users", UsersController, :create
 
+    # post "/accounts/:id/deposit", AccountsController, :deposit
+    # post "/accounts/:id/withdraw", AccountsController, :withdraw
+    # post "/accounts/transaction", AccountsController, :transaction
+  end
+
+  scope "/api", RocketpayWeb do
+    pipe_through [:api, :auth]
+
     post "/accounts/:id/deposit", AccountsController, :deposit
-
     post "/accounts/:id/withdraw", AccountsController, :withdraw
-
     post "/accounts/transaction", AccountsController, :transaction
   end
 
@@ -35,3 +48,6 @@ defmodule RocketpayWeb.Router do
     end
   end
 end
+
+# https://hexdocs.pm/plug/Plug.BasicAuth.html
+# https://hexdocs.pm/phoenix/Phoenix.Router.html#summary
