@@ -11,17 +11,18 @@ const ExperienceBar = () => {
 
   return (
     <header className={styles.experienceBar}>
-      <span>{currentExperience} xp</span>
+      <span>0 xp</span>
 
       <div>
-        <div style={{ width: `${percentToNextLevel}%` }}></div>
-
         {currentExperience === 0 ? (
           ""
         ) : (
-          <span className={styles.currentExperience} style={{ left: `${percentToNextLevel}%` }}>
-            {currentExperience} xp
-          </span>
+          <>
+            <div className={styles.percentToNextLevel} style={{ width: `${percentToNextLevel}%` }}></div>
+            <span className={styles.currentExperience} style={{ left: `${percentToNextLevel}%` }}>
+              {currentExperience} xp
+            </span>
+          </>
         )}
       </div>
 

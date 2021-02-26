@@ -17,14 +17,13 @@
   position: relative;
 }
 
-.experienceBar > div > div {
+.experienceBar > div > .percentToNextLevel {
   height: 4px;
   border-radius: 4px;
   background: var(--green);
 }
 
-/* span.currentExperience { */
-.experienceBar > div > span {
+.experienceBar > div > .currentExperience {
   position: absolute;
   top: 12px;
   transform: translateX(-50%);
