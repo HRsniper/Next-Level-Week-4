@@ -39,7 +39,6 @@ const Countdown = () => {
     } else if (isActive && time === 0) {
       setHasFinished(true);
       setIsActive(false);
-      // resetCountdown();
       startNewChallenge();
     }
   }, [isActive, time]);

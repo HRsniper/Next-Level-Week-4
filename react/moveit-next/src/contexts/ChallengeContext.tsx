@@ -1,9 +1,19 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
+
+import challenges from "../pages/api/challenges.json";
+
+type ActiveChallengeType = {
+  // type: string;
+  type: "body" | "eye";
+  description: string;
+  amount: number;
+};
 
 type ChallengeContextType = {
   level: number;
   currentExperience: number;
   challengesCompleted: number;
+  activeChallenge: ActiveChallengeType;
   levelUp: () => void;
   startNewChallenge: () => void;
 };
@@ -18,21 +28,27 @@ function ChallengeContextProvider({ children }: ChallengeContextProviderType) {
   const [level, setLevel] = useState(1);
   const [currentExperience, setCurrentExperience] = useState(0);
   const [challengesCompleted, setChallengesCompleted] = useState(0);
+  const [activeChallenge, setActiveChallenge] = useState(null);
 
   function levelUp() {
     setLevel(level + 1);
   }
 
   function startNewChallenge() {
-    console.log("new");
+    const randomChallengesIndex = Math.floor(Math.random() * challenges.length);
+    const challenge = challenges[randomChallengesIndex];
+
+    setActiveChallenge(challenge);
   }
 
   return (
-    <ChallengeContext.Provider value={{ level, currentExperience, challengesCompleted, levelUp, startNewChallenge }}>
+    <ChallengeContext.Provider
+      value={{ level, currentExperience, challengesCompleted, activeChallenge, levelUp, startNewChallenge }}
+    >
       {children}
     </ChallengeContext.Provider>
   );
 }
 
 export { ChallengeContext, ChallengeContextProvider };
-export type { ChallengeContextType, ChallengeContextProviderType };
+export type { ChallengeContextType, ChallengeContextProviderType, ActiveChallengeType };
