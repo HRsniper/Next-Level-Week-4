@@ -75,3 +75,5 @@ $  Rocketpay.deposit(%{"id" => "c0c85899-41be-4168-b652-28b27246cdca", "value" =
 $ Rocketpay.withdraw(%{"id" => "c0c85899-41be-4168-b652-28b27246cdca", "value" => "50.0"})
 
 $ Rocketpay.Accounts.Transaction.call(%{"from" => "c0c85899-41be-4168-b652-28b27246cdca", "to" => "8a45f802-7971-4d05-8a1f-f70fdb376fda", "value" => "100.0"})
+
+$ mix test --cover
