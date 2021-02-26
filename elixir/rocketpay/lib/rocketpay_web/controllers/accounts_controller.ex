@@ -25,12 +25,28 @@ defmodule RocketpayWeb.AccountsController do
   end
 
   def transaction(connection, params) do
+    # task = Task.async(fn -> Rocketpay.transaction(params) end)
+    # result = Task.await(task)
+
+    # enquanto isso podemos faze outras tarefas/buscas no banco
+    # a task , vai ser rodada  em outra thread junto com qual outa tarefa
+
+    # with {:ok, %TransactionResponse{} = transaction} <- Task.await(task) do
+
     with {:ok, %TransactionResponse{} = transaction} <- Rocketpay.transaction(params) do
       connection
       |> put_status(:ok)
       |> render("transaction.json", transaction: transaction)
     end
+
+    # Inicia uma tarefa. retorna nada
+    # Task.start(fn -> Rocketpay.transaction(params) end)
+
+    # connection
+    # |> put_status(:no_content)
+    # |> text("")
   end
 end
 
 # https://hexdocs.pm/phoenix/Phoenix.Controller.html#summary
+# https://hexdocs.pm/elixir/Task.html#summary
