@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+
+import { ChallengeContext } from "../contexts/ChallengeContext";
 
 import styles from "../styles/components/ChallengeBox.module.css";
 
 const ChallengeBox = () => {
-  const initialDefaultTime = 0.1 * 60;
+  const contextData = useContext(ChallengeContext);
+  console.log(contextData);
 
   const [hasActiveChallenge, setHasActiveChallenge] = useState(true);
 
