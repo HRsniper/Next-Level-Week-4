@@ -39,6 +39,7 @@ function CountdownContextProvider({ children }: CountdownContextProviderType) {
   function resetCountdown() {
     clearTimeout(countdownTimeout);
     setIsActive(false);
+    setHasFinished(false);
     setTime(initialDefaultTime);
   }
 
