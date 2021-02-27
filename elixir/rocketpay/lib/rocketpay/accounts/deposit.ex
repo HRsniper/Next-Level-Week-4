@@ -12,7 +12,7 @@ defmodule Rocketpay.Accounts.Deposit do
     # transação retorna o valor como {:ok, value} ou {:error, value}.
     case Repo.transaction(multi) do
       {:error, _operation, reason, _changes} -> {:error, reason}
-      {:ok, %{account_deposit: account}} -> {:ok, account}
+      {:ok, %{deposit: account}} -> {:ok, account}
     end
   end
 end

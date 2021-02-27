@@ -12,7 +12,7 @@ defmodule Rocketpay.Accounts.Withdraw do
     # transação retorna o valor como {:ok, value} ou {:error, value}.
     case Repo.transaction(multi) do
       {:error, _operation, reason, _changes} -> {:error, reason}
-      {:ok, %{account_withdraw: account}} -> {:ok, account}
+      {:ok, %{withdraw: account}} -> {:ok, account}
     end
   end
 end
