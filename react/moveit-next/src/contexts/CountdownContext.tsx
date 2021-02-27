@@ -12,7 +12,7 @@ type CountdownContextType = {
   resetCountdown: () => void;
 };
 
-type CountdownContextProviderType = {
+type CountdownContextProviderPropsType = {
   children: ReactNode;
 };
 
@@ -20,7 +20,7 @@ const CountdownContext = createContext({} as CountdownContextType);
 
 let countdownTimeout: NodeJS.Timeout;
 
-function CountdownContextProvider({ children }: CountdownContextProviderType) {
+function CountdownContextProvider({ children }: CountdownContextProviderPropsType) {
   const { startNewChallenge } = useContext(ChallengeContext);
 
   const initialDefaultTime = 0.1 * 60;
@@ -65,4 +65,4 @@ function CountdownContextProvider({ children }: CountdownContextProviderType) {
 }
 
 export { CountdownContext, CountdownContextProvider };
-export type { CountdownContextType, CountdownContextProviderType };
+export type { CountdownContextType, CountdownContextProviderPropsType };

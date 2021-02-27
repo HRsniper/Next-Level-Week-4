@@ -22,13 +22,16 @@ type ChallengeContextType = {
   completeChallenge: () => void;
 };
 
-type ChallengeContextProviderType = {
+type ChallengeContextProviderPropsType = {
   children: ReactNode;
+  level: number;
+  currentExperience: number;
+  challengesCompleted: number;
 };
 
 const ChallengeContext = createContext({} as ChallengeContextType);
 
-function ChallengeContextProvider({ children }: ChallengeContextProviderType) {
+function ChallengeContextProvider({ children }: ChallengeContextProviderPropsType) {
   const [level, setLevel] = useState(1);
   const [currentExperience, setCurrentExperience] = useState(0);
   const [challengesCompleted, setChallengesCompleted] = useState(0);
@@ -104,4 +107,4 @@ function ChallengeContextProvider({ children }: ChallengeContextProviderType) {
 }
 
 export { ChallengeContext, ChallengeContextProvider };
-export type { ChallengeContextType, ChallengeContextProviderType, ActiveChallengeType };
+export type { ChallengeContextType, ChallengeContextProviderPropsType, ActiveChallengeType };
