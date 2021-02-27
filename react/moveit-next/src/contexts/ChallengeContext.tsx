@@ -31,10 +31,10 @@ type ChallengeContextProviderPropsType = {
 
 const ChallengeContext = createContext({} as ChallengeContextType);
 
-function ChallengeContextProvider({ children }: ChallengeContextProviderPropsType) {
-  const [level, setLevel] = useState(1);
-  const [currentExperience, setCurrentExperience] = useState(0);
-  const [challengesCompleted, setChallengesCompleted] = useState(0);
+function ChallengeContextProvider({ children, ...rest }: ChallengeContextProviderPropsType) {
+  const [level, setLevel] = useState(rest.level ?? 1);
+  const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
+  const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0);
   const [activeChallenge, setActiveChallenge] = useState(null);
 
   const experienceFactor = 4;
