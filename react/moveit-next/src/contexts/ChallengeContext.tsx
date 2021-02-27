@@ -37,6 +37,7 @@ function ChallengeContextProvider({ children, ...rest }: ChallengeContextProvide
   const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
   const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0);
   const [activeChallenge, setActiveChallenge] = useState(null);
+  const [IsLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
 
   const experienceFactor = 4;
   const experienceToNextLevel = Math.pow((level + 1) * experienceFactor, 2);
@@ -53,6 +54,7 @@ function ChallengeContextProvider({ children, ...rest }: ChallengeContextProvide
 
   function levelUp() {
     setLevel(level + 1);
+    setIsLevelUpModalOpen(true);
   }
 
   function startNewChallenge() {
@@ -104,7 +106,7 @@ function ChallengeContextProvider({ children, ...rest }: ChallengeContextProvide
     >
       {children}
 
-      <LevelUpModel />
+      {IsLevelUpModalOpen && <LevelUpModel />}
     </ChallengeContext.Provider>
   );
 }
