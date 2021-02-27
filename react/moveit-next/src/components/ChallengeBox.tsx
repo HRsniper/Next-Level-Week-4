@@ -5,7 +5,7 @@ import { ChallengeContext } from "../contexts/ChallengeContext";
 import styles from "../styles/components/ChallengeBox.module.css";
 
 const ChallengeBox = () => {
-  const { activeChallenge, resetChallenge } = useContext(ChallengeContext);
+  const { activeChallenge, resetChallenge, completeChallenge } = useContext(ChallengeContext);
 
   useEffect(() => {}, []);
 
@@ -25,7 +25,7 @@ const ChallengeBox = () => {
               Falhei
             </button>
 
-            <button type="button" className={styles.challengeCompletedButton} onClick={() => {}}>
+            <button type="button" className={styles.challengeCompletedButton} onClick={completeChallenge}>
               Completei
             </button>
           </footer>
