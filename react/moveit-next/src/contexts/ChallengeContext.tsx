@@ -2,6 +2,7 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 import Cookie from "js-cookie";
 
 import challenges from "../pages/api/challenges.json";
+import { LevelUpModel } from "../components/LevelUpModel";
 
 type ActiveChallengeType = {
   // type: string;
@@ -102,6 +103,8 @@ function ChallengeContextProvider({ children, ...rest }: ChallengeContextProvide
       }}
     >
       {children}
+
+      <LevelUpModel />
     </ChallengeContext.Provider>
   );
 }
