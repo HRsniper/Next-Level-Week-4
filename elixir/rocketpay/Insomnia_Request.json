@@ -1,1 +1,280 @@
-{"_type":"export","__export_format":4,"__export_date":"2021-02-26T21:10:56.549Z","__export_source":"insomnia.desktop.app:v2020.5.2","resources":[{"_id":"req_a28a289d52234bc48949c04a11af9874","parentId":"fld_d839cdaf9ab64d3fbc7bc7d7b0e58a24","modified":1614373758035,"created":1614191097114,"url":"{{ baseUrl }}/api/accounts/c0c85899-41be-4168-b652-28b27246cdca/withdraw","name":"user account withdraw","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"value\": \"3.0\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json","id":"pair_b2fd0af797f6438195256197bb1df563"}],"authentication":{"type":"basic","useISO88591":false,"disabled":false,"username":"hercules","password":"elixir"},"metaSortKey":-1614272698805,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_d839cdaf9ab64d3fbc7bc7d7b0e58a24","parentId":"wrk_73210dabee074f418c9890535b441207","modified":1614373678967,"created":1614373678967,"name":"auth","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1614373678968,"_type":"request_group"},{"_id":"wrk_73210dabee074f418c9890535b441207","parentId":null,"modified":1614171343857,"created":1614171343857,"name":"NLW4 Elixir","description":"","scope":null,"_type":"workspace"},{"_id":"req_d5a7cd8b35c641109843cde89ce57746","parentId":"fld_d839cdaf9ab64d3fbc7bc7d7b0e58a24","modified":1614373744348,"created":1614191137484,"url":"{{ baseUrl }}/api/accounts/c0c85899-41be-4168-b652-28b27246cdca/deposit","name":"user account deposit","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"value\": \"150.0\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json","id":"pair_b2fd0af797f6438195256197bb1df563"}],"authentication":{"type":"basic","useISO88591":false,"disabled":false,"username":"hercules","password":"elixir"},"metaSortKey":-1614272698755,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_e93acd576443441eb54fb5fe602fc7bb","parentId":"fld_d839cdaf9ab64d3fbc7bc7d7b0e58a24","modified":1614373700271,"created":1614265222403,"url":"{{ baseUrl }}/api/accounts/transaction","name":"user account transaction","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"to\": \"c0c85899-41be-4168-b652-28b27246cdca\",\n\t\"from\": \"8a45f802-7971-4d05-8a1f-f70fdb376fda\",\n\t\"value\": \"5.0\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json","id":"pair_b2fd0af797f6438195256197bb1df563"},{"name":"Authorization","value":"Basic aGVyY3VsZXM6ZWxpeGly","description":"","id":"pair_dca12b950c294c6d99be8d5aab3879a1","disabled":true},{"name":"Authorization","value":"Basic {% base64 'encode', 'normal', 'hercules:elixir' %}","description":"","id":"pair_0987a856630e45809f7c4128ccd67750","disabled":true}],"authentication":{"type":"basic","useISO88591":false,"disabled":false,"username":"hercules","password":"elixir"},"metaSortKey":-1614272698705,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_e045aa47ff7c465a8ed23089eab60fb1","parentId":"wrk_73210dabee074f418c9890535b441207","modified":1614171734739,"created":1614171718541,"url":"{{ baseUrl }}/api/numbers","name":"welcome :filename","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1614171718542,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_b0760f87103e4a94a89e628c0e50f7a6","parentId":"wrk_73210dabee074f418c9890535b441207","modified":1614267362889,"created":1614171343955,"url":"{{ baseUrl }}/api/users","name":"create user","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"name\": \"Rafael1\",\n\t\"age\": 29,\n\t\"email\": \"1rafael@gmail.com\",\n\t\"password\": \"12345\",\n\t\"nickname\": \"rafaca1\"\n}\n"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json","id":"pair_b2fd0af797f6438195256197bb1df563"}],"authentication":{},"metaSortKey":-1614127656570,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_c1a605e6e21a4e698f377288c70f9091","parentId":"wrk_73210dabee074f418c9890535b441207","modified":1614171486171,"created":1614171343936,"url":"{{ baseUrl }}/dashboard","name":"dashboard","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1614045106602,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"env_1ceddba38c8047a09d9832cce6744661","parentId":"wrk_73210dabee074f418c9890535b441207","modified":1614171343874,"created":1614171343874,"name":"Base Environment","data":{},"dataPropertyOrder":null,"color":null,"isPrivate":false,"metaSortKey":1614044875473,"_type":"environment"},{"_id":"jar_b4f569a5ddc64d0385e4d9f57ee30499","parentId":"wrk_73210dabee074f418c9890535b441207","modified":1614171488793,"created":1614171343905,"name":"Default Jar","cookies":[{"key":"_rocketpay_key","value":"SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYOGRHM0VKc1RGNlVaWnFZZFZIa3p6eklP.Yvl9Dj_CkrlOFEaraVMXEh_nX53iBu6FFAx_MhRS0dY","domain":"localhost","path":"/","httpOnly":true,"hostOnly":true,"creation":"2021-02-24T12:58:08.722Z","lastAccessed":"2021-02-24T12:58:08.722Z","id":"4828777693625028"}],"_type":"cookie_jar"},{"_id":"spc_937071a8753c457abc561685c374d61c","parentId":"wrk_73210dabee074f418c9890535b441207","modified":1614171343914,"created":1614171343914,"fileName":"NLW4","contents":"","contentType":"yaml","_type":"api_spec"},{"_id":"pf_0f821173793e43a58a12efe8c583ffaa","parentId":"wrk_73210dabee074f418c9890535b441207","modified":1614209874211,"created":1614209874211,"name":"pixkey.proto","protoText":"syntax = \"proto3\";\n\npackage github.com.HRsniper.codepix;\n\noption go_package = \"protofiles;pb\";\n\nmessage PixKeyRegistration {\n    string kind = 1;\n    string key = 2;\n    string accountId = 3;\n}\n\nmessage PixKey {\n    string kind = 1;\n    string key = 2;\n}\n\nmessage Account {\n    string accountId = 1;\n    string accountNumber = 2;\n    string bankId = 3;\n    string bankName = 4;\n    string OwnerName = 5;\n    string createdAt = 6;\n}\n\nmessage PixKeyInfo {\n    string id = 1;\n    string kind = 2;\n    string key = 3;\n    Account account = 4;\n    string createdAt = 5;\n}\n\nmessage PixKeyCreatedResult {\n    string id = 1;\n    string status = 2;\n    string error = 3;\n}\n\nservice PixService {\n    rpc RegisterPixKey(PixKeyRegistration) returns (PixKeyCreatedResult) {};\n    rpc Find(PixKey) returns (PixKeyInfo) {};\n}\n","_type":"proto_file"},{"_id":"env_f0fd32e541ab47469581863e0673fff5","parentId":"env_1ceddba38c8047a09d9832cce6744661","modified":1614171361312,"created":1614171343896,"name":"Development","data":{"baseUrl":"http://localhost:4000"},"dataPropertyOrder":{"&":["baseUrl"]},"color":"#ff0000","isPrivate":false,"metaSortKey":1614044916592,"_type":"environment"}]}
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-02-27T14:23:13.080Z",
+  "__export_source": "insomnia.desktop.app:v2020.5.2",
+  "resources": [
+    {
+      "_id": "req_a28a289d52234bc48949c04a11af9874",
+      "parentId": "fld_d839cdaf9ab64d3fbc7bc7d7b0e58a24",
+      "modified": 1614373758035,
+      "created": 1614191097114,
+      "url": "{{ baseUrl }}/api/accounts/c0c85899-41be-4168-b652-28b27246cdca/withdraw",
+      "name": "user account withdraw",
+      "description": "",
+      "method": "POST",
+      "body": { "mimeType": "application/json", "text": "{\n\t\"value\": \"3.0\"\n}" },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "application/json", "id": "pair_b2fd0af797f6438195256197bb1df563" }
+      ],
+      "authentication": {
+        "type": "basic",
+        "useISO88591": false,
+        "disabled": false,
+        "username": "hercules",
+        "password": "elixir"
+      },
+      "metaSortKey": -1614272698805,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_d839cdaf9ab64d3fbc7bc7d7b0e58a24",
+      "parentId": "wrk_73210dabee074f418c9890535b441207",
+      "modified": 1614373678967,
+      "created": 1614373678967,
+      "name": "auth",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1614373678968,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_73210dabee074f418c9890535b441207",
+      "parentId": null,
+      "modified": 1614171343857,
+      "created": 1614171343857,
+      "name": "NLW4 Elixir",
+      "description": "",
+      "scope": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_d5a7cd8b35c641109843cde89ce57746",
+      "parentId": "fld_d839cdaf9ab64d3fbc7bc7d7b0e58a24",
+      "modified": 1614373744348,
+      "created": 1614191137484,
+      "url": "{{ baseUrl }}/api/accounts/c0c85899-41be-4168-b652-28b27246cdca/deposit",
+      "name": "user account deposit",
+      "description": "",
+      "method": "POST",
+      "body": { "mimeType": "application/json", "text": "{\n\t\"value\": \"150.0\"\n}" },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "application/json", "id": "pair_b2fd0af797f6438195256197bb1df563" }
+      ],
+      "authentication": {
+        "type": "basic",
+        "useISO88591": false,
+        "disabled": false,
+        "username": "hercules",
+        "password": "elixir"
+      },
+      "metaSortKey": -1614272698755,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e93acd576443441eb54fb5fe602fc7bb",
+      "parentId": "fld_d839cdaf9ab64d3fbc7bc7d7b0e58a24",
+      "modified": 1614373700271,
+      "created": 1614265222403,
+      "url": "{{ baseUrl }}/api/accounts/transaction",
+      "name": "user account transaction",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"to\": \"c0c85899-41be-4168-b652-28b27246cdca\",\n\t\"from\": \"8a45f802-7971-4d05-8a1f-f70fdb376fda\",\n\t\"value\": \"5.0\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "application/json", "id": "pair_b2fd0af797f6438195256197bb1df563" },
+        {
+          "name": "Authorization",
+          "value": "Basic aGVyY3VsZXM6ZWxpeGly",
+          "description": "",
+          "id": "pair_dca12b950c294c6d99be8d5aab3879a1",
+          "disabled": true
+        },
+        {
+          "name": "Authorization",
+          "value": "Basic {% base64 'encode', 'normal', 'hercules:elixir' %}",
+          "description": "",
+          "id": "pair_0987a856630e45809f7c4128ccd67750",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "useISO88591": false,
+        "disabled": false,
+        "username": "hercules",
+        "password": "elixir"
+      },
+      "metaSortKey": -1614272698705,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e045aa47ff7c465a8ed23089eab60fb1",
+      "parentId": "wrk_73210dabee074f418c9890535b441207",
+      "modified": 1614171734739,
+      "created": 1614171718541,
+      "url": "{{ baseUrl }}/api/numbers",
+      "name": "welcome :filename",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1614171718542,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b0760f87103e4a94a89e628c0e50f7a6",
+      "parentId": "wrk_73210dabee074f418c9890535b441207",
+      "modified": 1614267362889,
+      "created": 1614171343955,
+      "url": "{{ baseUrl }}/api/users",
+      "name": "create user",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Rafael1\",\n\t\"age\": 29,\n\t\"email\": \"1rafael@gmail.com\",\n\t\"password\": \"12345\",\n\t\"nickname\": \"rafaca1\"\n}\n"
+      },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "application/json", "id": "pair_b2fd0af797f6438195256197bb1df563" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1614127656570,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c1a605e6e21a4e698f377288c70f9091",
+      "parentId": "wrk_73210dabee074f418c9890535b441207",
+      "modified": 1614171486171,
+      "created": 1614171343936,
+      "url": "{{ baseUrl }}/dashboard",
+      "name": "dashboard",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1614045106602,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_1ceddba38c8047a09d9832cce6744661",
+      "parentId": "wrk_73210dabee074f418c9890535b441207",
+      "modified": 1614171343874,
+      "created": 1614171343874,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1614044875473,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_b4f569a5ddc64d0385e4d9f57ee30499",
+      "parentId": "wrk_73210dabee074f418c9890535b441207",
+      "modified": 1614171488793,
+      "created": 1614171343905,
+      "name": "Default Jar",
+      "cookies": [
+        {
+          "key": "_rocketpay_key",
+          "value": "SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYOGRHM0VKc1RGNlVaWnFZZFZIa3p6eklP.Yvl9Dj_CkrlOFEaraVMXEh_nX53iBu6FFAx_MhRS0dY",
+          "domain": "localhost",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2021-02-24T12:58:08.722Z",
+          "lastAccessed": "2021-02-24T12:58:08.722Z",
+          "id": "4828777693625028"
+        }
+      ],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_937071a8753c457abc561685c374d61c",
+      "parentId": "wrk_73210dabee074f418c9890535b441207",
+      "modified": 1614171343914,
+      "created": 1614171343914,
+      "fileName": "NLW4",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "pf_0f821173793e43a58a12efe8c583ffaa",
+      "parentId": "wrk_73210dabee074f418c9890535b441207",
+      "modified": 1614209874211,
+      "created": 1614209874211,
+      "name": "pixkey.proto",
+      "protoText": "syntax = \"proto3\";\n\npackage github.com.HRsniper.codepix;\n\noption go_package = \"protofiles;pb\";\n\nmessage PixKeyRegistration {\n    string kind = 1;\n    string key = 2;\n    string accountId = 3;\n}\n\nmessage PixKey {\n    string kind = 1;\n    string key = 2;\n}\n\nmessage Account {\n    string accountId = 1;\n    string accountNumber = 2;\n    string bankId = 3;\n    string bankName = 4;\n    string OwnerName = 5;\n    string createdAt = 6;\n}\n\nmessage PixKeyInfo {\n    string id = 1;\n    string kind = 2;\n    string key = 3;\n    Account account = 4;\n    string createdAt = 5;\n}\n\nmessage PixKeyCreatedResult {\n    string id = 1;\n    string status = 2;\n    string error = 3;\n}\n\nservice PixService {\n    rpc RegisterPixKey(PixKeyRegistration) returns (PixKeyCreatedResult) {};\n    rpc Find(PixKey) returns (PixKeyInfo) {};\n}\n",
+      "_type": "proto_file"
+    },
+    {
+      "_id": "env_f0fd32e541ab47469581863e0673fff5",
+      "parentId": "env_1ceddba38c8047a09d9832cce6744661",
+      "modified": 1614171361312,
+      "created": 1614171343896,
+      "name": "Development",
+      "data": { "baseUrl": "http://localhost:4000" },
+      "dataPropertyOrder": { "&": ["baseUrl"] },
+      "color": "#ff0000",
+      "isPrivate": false,
+      "metaSortKey": 1614044916592,
+      "_type": "environment"
+    }
+  ]
+}
