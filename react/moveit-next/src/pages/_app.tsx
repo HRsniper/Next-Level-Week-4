@@ -1,14 +1,16 @@
 import type { AppProps } from "next/app";
-import { useState } from "react";
 
 import { ChallengeContextProvider } from "../contexts/ChallengeContext";
+import { CountdownContextProvider } from "../contexts/CountdownContext";
 
 import "../styles/global.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChallengeContextProvider>
-      <Component {...pageProps} />;
+      <CountdownContextProvider>
+        <Component {...pageProps} />;
+      </CountdownContextProvider>
     </ChallengeContextProvider>
   );
 }
