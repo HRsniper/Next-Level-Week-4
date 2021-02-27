@@ -6,13 +6,13 @@ import type { AppProps } from "next/app";
 import "../styles/global.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    // <ChallengeContextProvider>
-      {/* <CountdownContextProvider> */}
-        <Component {...pageProps} />;
-      {/* </CountdownContextProvider> */}
-    // </ChallengeContextProvider>
-  );
+  return <Component {...pageProps} />;
+
+  //  <ChallengeContextProvider>
+  //    <CountdownContextProvider>
+  //     <Component {...pageProps} />
+  //    </CountdownContextProvider>
+  //  </ChallengeContextProvider>
 }
 
 export default MyApp;
