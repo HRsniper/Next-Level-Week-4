@@ -5,7 +5,7 @@ import { ChallengeContext } from "../contexts/ChallengeContext";
 import styles from "../styles/components/LevelUpModel.module.css";
 
 const LevelUpModel = () => {
-  const { level } = useContext(ChallengeContext);
+  const { level, closeLevelUpModel } = useContext(ChallengeContext);
 
   return (
     <div className={styles.overlay}>
@@ -14,7 +14,7 @@ const LevelUpModel = () => {
         <strong>Você subiu de nível</strong>
         <p>Continue assim para aumentar seu nível ainda mais e ficar mais saudável</p>
 
-        <button type="button">
+        <button type="button" onClick={closeLevelUpModel}>
           <img src="/icons/close.svg" alt="X" />
         </button>
       </div>

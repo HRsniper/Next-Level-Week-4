@@ -21,6 +21,7 @@ type ChallengeContextType = {
   startNewChallenge: () => void;
   resetChallenge: () => void;
   completeChallenge: () => void;
+  closeLevelUpModel: () => void;
 };
 
 type ChallengeContextProviderPropsType = {
@@ -55,6 +56,10 @@ function ChallengeContextProvider({ children, ...rest }: ChallengeContextProvide
   function levelUp() {
     setLevel(level + 1);
     setIsLevelUpModalOpen(true);
+  }
+
+  function closeLevelUpModel() {
+    setIsLevelUpModalOpen(false);
   }
 
   function startNewChallenge() {
@@ -101,7 +106,8 @@ function ChallengeContextProvider({ children, ...rest }: ChallengeContextProvide
         levelUp,
         startNewChallenge,
         resetChallenge,
-        completeChallenge
+        completeChallenge,
+        closeLevelUpModel
       }}
     >
       {children}
