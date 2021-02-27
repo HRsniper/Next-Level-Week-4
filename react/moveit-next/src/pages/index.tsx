@@ -7,6 +7,7 @@ import { CompletedChallenges } from "../components/CompletedChallenges";
 import { Countdown } from "../components/Countdown";
 import { ChallengeBox } from "../components/ChallengeBox";
 import { CountdownContextProvider } from "../contexts/CountdownContext";
+import { ChallengeContextProvider } from "../contexts/ChallengeContext";
 
 import styles from "../styles/pages/Home.module.css";
 
@@ -18,26 +19,32 @@ type HomePropsType = {
 
 function Home({ level, currentExperience, challengesCompleted }: HomePropsType) {
   return (
-    <main className={styles.container}>
-      <Head>
-        <title>Início | move.it</title>
-      </Head>
+    <ChallengeContextProvider
+      level={level}
+      currentExperience={currentExperience}
+      challengesCompleted={challengesCompleted}
+    >
+      <main className={styles.container}>
+        <Head>
+          <title>Início | move.it</title>
+        </Head>
 
-      <ExperienceBar />
+        <ExperienceBar />
 
-      <CountdownContextProvider>
-        <section>
-          <div>
-            <Profile />
-            <CompletedChallenges />
-            <Countdown />
-          </div>
-          <div>
-            <ChallengeBox />
-          </div>
-        </section>
-      </CountdownContextProvider>
-    </main>
+        <CountdownContextProvider>
+          <section>
+            <div>
+              <Profile />
+              <CompletedChallenges />
+              <Countdown />
+            </div>
+            <div>
+              <ChallengeBox />
+            </div>
+          </section>
+        </CountdownContextProvider>
+      </main>
+    </ChallengeContextProvider>
   );
 }
 
