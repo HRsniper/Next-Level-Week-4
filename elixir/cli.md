@@ -52,13 +52,6 @@ iex> Rocketpay.User.changeset(%{ name: "Hercules", age: "23", email: "HR@gmail.c
   valid?: true
 > -->
 
-```
-#rumoaoproximonivel
-#jornadainfinita
-#focopraticagrupo
-#nerverstoplearning
-```
-
 http://localhost:4000/api/users
 
 retorna todos usuarios do banco
@@ -81,3 +74,11 @@ $ mix test --cover
 $ mix coveralls.html
 
 open cover/excoveralls.html
+
+```
+#rumoaoproximonivel
+#jornadainfinita
+#focopraticagrupo
+#nerverstoplearning
+#missioncompleted
+```
