@@ -1,5 +1,5 @@
 defmodule RocketpayWeb.UsersViewTest do
-  use RocketpayWeb.ConnCase
+  use RocketpayWeb.ConnCase, async: true
 
   # Traz render/3 e render_to_string/3 para testar visualizações personalizadas
   import Phoenix.View
