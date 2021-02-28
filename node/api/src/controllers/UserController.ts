@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { getRepository } from "typeorm";
+import { getCustomRepository } from "typeorm";
 
-import { User } from "../entities/User";
+import { UserRepository } from "../repositories/UserRepository";
 
 type RequestType = {
   id: string;
@@ -9,11 +9,12 @@ type RequestType = {
   email: string;
   created_at: Date;
 };
+
 class UserController {
   async create(request: Request, response: Response) {
     const { name, email }: RequestType = request.body;
 
-    const userRepository = getRepository(User);
+    const userRepository = getCustomRepository(UserRepository);
 
     const userAlreadyExists = await userRepository.findOne({ email });
 
@@ -24,7 +25,7 @@ class UserController {
     const user = userRepository.create({ name, email });
     await userRepository.save(user);
 
-    response.status(201).json(user);
+    return response.status(201).json(user);
   }
 }
 
