@@ -27,6 +27,7 @@ class SurveyController {
 
     return response.status(201).json(survey);
   }
+
   async list(request: Request, response: Response) {
     const surveyRepository = getCustomRepository(SurveyRepository);
     const surveysExisted = await surveyRepository.find();

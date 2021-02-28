@@ -11,6 +11,7 @@ const surveyController = new SurveyController();
 router.get("/", (request, response) => response.json({ message: "server running 🚀" }));
 
 router.post("/users", userController.create);
+router.get("/users", userController.list);
 
 router.post("/surveys", surveyController.create);
 router.get("/surveys", surveyController.list);
