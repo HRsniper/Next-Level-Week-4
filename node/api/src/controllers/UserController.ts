@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { getRepository } from "typeorm";
 
-import { User } from "../database/entities/User";
+import { User } from "../entities/User";
 
 type RequestType = {
   id: string;
