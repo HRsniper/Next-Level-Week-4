@@ -1,20 +1,37 @@
-{
-  "name": "default",
-  "type": "postgres",
-  "host": "localhost",
-  "port": 5432,
-  "username": "postgres",
-  "password": "postgres",
-  "database": "nodenlw4",
-  "schema": "public",
-  "synchronize": false,
-  "logging": true,
-  "entities": ["src/entities/**/*.ts"],
-  "migrations": ["src/database/migrations/**/*.ts"],
-  "subscribers": ["src/database/subscribers/**/*.ts"],
-  "cli": {
-    "entitiesDir": "/src/entities",
-    "migrationsDir": "src/database/migrations",
-    "subscribersDir": "src/database/subscribers"
+[
+  {
+    "name": "default",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "postgres",
+    "database": "nodenlw4",
+    "schema": "public",
+    "synchronize": false,
+    "logging": true,
+    "entities": ["src/entities/**/*.ts"],
+    "migrations": ["src/database/migrations/**/*.ts"],
+    "subscribers": ["src/database/subscribers/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/entities",
+      "migrationsDir": "src/database/migrations",
+      "subscribersDir": "src/database/subscribers"
+    }
+  },
+  {
+    "name": "test",
+    "type": "sqlite",
+    "database": "./src/database/database.sqlite",
+    "synchronize": false,
+    "logging": true,
+    "entities": ["src/entities/**/*.ts"],
+    "migrations": ["src/database/migrations/**/*.ts"],
+    "subscribers": ["src/database/subscribers/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/entities",
+      "migrationsDir": "src/database/migrations",
+      "subscribersDir": "src/database/subscribers"
+    }
   }
-}
+]

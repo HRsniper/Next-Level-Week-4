@@ -19,23 +19,25 @@ describe("User", () => {
   beforeAll(async () => {
     connection = await createConnection();
     // await connection.runMigrations();
-  });
-
-  beforeEach(async () => {
     await deleteUserTest();
   });
 
-  afterEach(async () => {
-    await deleteUserTest();
-  });
+  // beforeEach(async () => {});
+
+  // afterEach(async () => {});
 
   afterAll(async () => {
+    await deleteUserTest();
     await connection.close();
   });
 
   it("ensure that the user is created with valid parameters", async () => {
     const response = await request(app).post("/users").send({ name: "user_test", email: "user_test@gmail.com" });
-
     expect(response.status).toBe(201);
+  });
+
+  it("ensure that the user is not created with email exists", async () => {
+    const response = await request(app).post("/users").send({ name: "user_test", email: "user_test@gmail.com" });
+    expect(response.status).toBe(400);
   });
 });
