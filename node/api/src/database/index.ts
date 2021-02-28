@@ -6,6 +6,7 @@ export default async (): Promise<Connection> => {
   const defaultOptions = await getConnectionOptions();
 
   const database_test = { ...defaultOptions };
+  database_test.name = "test";
   database_test.database = "nodenlw4_test";
 
   return createConnection(
