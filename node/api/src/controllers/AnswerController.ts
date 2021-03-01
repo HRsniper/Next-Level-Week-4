@@ -6,12 +6,12 @@ import { SurveyUserRepository } from "../repositories/SurveyUserRepository";
 class AnswerController {
   async execute(request: Request, response: Response) {
     const { value } = request.params;
-    const { u } = request.query;
+    const { survey_user_id } = request.query;
 
     const surveyUserRepository = getCustomRepository(SurveyUserRepository);
 
     const surveyUser = await surveyUserRepository.findOne({
-      id: String(u)
+      id: String(survey_user_id)
     });
 
     if (!surveyUser) {
@@ -23,6 +23,12 @@ class AnswerController {
     await surveyUserRepository.save(surveyUser);
 
     return response.status(201).json(surveyUser);
+  }
+
+  async list(request: Request, response: Response) {
+    const surveyUserRepository = getCustomRepository(SurveyUserRepository);
+    const surveysUsersExisted = await surveyUserRepository.find();
+    return response.status(200).json(surveysUsersExisted);
   }
 }
 
