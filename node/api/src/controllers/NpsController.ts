@@ -28,14 +28,14 @@ class NpsController {
     const passives = surveysUsers.filter((survey) => survey.value >= 7 && survey.value <= 8).length;
 
     const totalAnswers = surveysUsers.length;
-    const calculate = Number((((promoters - detractors) / totalAnswers) * 100).toFixed(2));
+    const nps = Number((((promoters - detractors) / totalAnswers) * 100).toFixed(2));
 
     return response.status(200).json({
       detractors,
       promoters,
       passives,
       totalAnswers,
-      nps: calculate
+      nps
     });
   }
 }
