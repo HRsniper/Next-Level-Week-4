@@ -1,9 +1,9 @@
 defmodule RocketpayWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :rocketpay
 
-  # The session will be stored in the cookie and signed,
-  # this means its contents can be read but not tampered with.
-  # Set :encryption_salt if you would also like to encrypt it.
+  # A sessão será armazenada no cookie e assinada,
+  # isso significa que seu conteúdo pode ser lido, mas não adulterado.
+  # Defina :encryption_salt se você também quiser criptografá-lo.
   @session_options [
     store: :cookie,
     key: "_rocketpay_key",
@@ -16,18 +16,17 @@ defmodule RocketpayWeb.Endpoint do
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
-  # Serve at "/" the static files from "priv/static" directory.
-  #
-  # You should set gzip to true if you are running phx.digest
-  # when deploying your static files in production.
+  # ´at: "/"´ Serve os arquivos estáticos do diretório "priv/static".
+  # Você deve definir gzip como true se estiver executando phx.digest
+  # ao implantar seus arquivos estáticos na produção.
   plug Plug.Static,
     at: "/",
     from: :rocketpay,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
-  # Code reloading can be explicitly enabled under the
-  # :code_reloader configuration of your endpoint.
+  # O recarregamento do código pode ser explicitamente ativado no
+  # configuração :code_reloader de seu endpoint.
   if code_reloading? do
     plug Phoenix.CodeReloader
     plug Phoenix.Ecto.CheckRepoStatus, otp_app: :rocketpay

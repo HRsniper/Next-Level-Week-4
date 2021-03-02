@@ -1,10 +1,11 @@
 use Mix.Config
 
-# Configure your database
+# Configura o banco de dados
 #
-# The MIX_TEST_PARTITION environment variable can be used
-# to provide built-in test partitioning in CI environment.
-# Run `mix help test` for more information.
+# A variável de ambiente MIX_TEST_PARTITION pode ser usada
+# para fornecer particionamento de teste integrado no ambiente de CI.
+# Execute `mix help test` para mais informações.
+
 config :rocketpay, Rocketpay.Repo,
   username: "postgres",
   password: "postgres",
@@ -12,11 +13,11 @@ config :rocketpay, Rocketpay.Repo,
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 
-# We don't run a server during test. If one is required,
-# you can enable the server option below.
+# Não rodamos um servidor durante o teste. Se for necessário,
+# você pode habilitar a opção de servidor abaixo.
 config :rocketpay, RocketpayWeb.Endpoint,
   http: [port: 4002],
   server: false
 
-# Print only warnings and errors during test
+# Imprime apenas avisos e erros durante o teste
 config :logger, level: :warn

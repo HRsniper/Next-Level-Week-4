@@ -21,9 +21,8 @@ defmodule Rocketpay.MixProject do
     ]
   end
 
-  # Configuration for the OTP application.
-  #
-  # Type `mix help compile.app` for more information.
+  # Configuração para o aplicativo OTP.
+  # Digite `mix help compile.app` para mais informações.
   def application do
     [
       mod: {Rocketpay.Application, []},
@@ -31,13 +30,12 @@ defmodule Rocketpay.MixProject do
     ]
   end
 
-  # Specifies which paths to compile per environment.
+  # Especifica quais caminhos compilar por ambiente.
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
 
-  # Specifies your project dependencies.
-  #
-  # Type `mix help deps` for examples and options.
+  # Especifica as dependências do seu projeto.
+  # Digite `mix help deps` para exemplos e opções.
   defp deps do
     [
       {:phoenix, "~> 1.5.7"},
@@ -58,12 +56,10 @@ defmodule Rocketpay.MixProject do
     ]
   end
 
-  # Aliases are shortcuts or tasks specific to the current project.
-  # For example, to install project dependencies and perform other setup tasks, run:
-  #
-  #     $ mix setup
-  #
-  # See the documentation for `Mix` for more info on aliases.
+  # Aliases são atalhos ou tarefas específicas para o projeto atual.
+  # Por exemplo, para instalar dependências do projeto e realizar outras tarefas de configuração, execute:
+  # $ mix setup
+  # Veja a documentação do `Mix` para mais informações sobre apelidos.
   defp aliases do
     [
       setup: ["deps.get", "ecto.setup"],

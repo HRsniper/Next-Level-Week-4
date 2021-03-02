@@ -1,7 +1,7 @@
 defmodule RocketpayWeb.ErrorViewTest do
   use RocketpayWeb.ConnCase, async: true
 
-  # Bring render/3 and render_to_string/3 for testing custom views
+  # Traga render/3 e render_to_string/3 para testar visualizações personalizadas
   import Phoenix.View
 
   test "renders 404.json" do

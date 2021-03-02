@@ -1,18 +1,18 @@
 defmodule RocketpayWeb.ChannelCase do
   @moduledoc """
-  This module defines the test case to be used by
-  channel tests.
+  Este módulo define o caso de teste a ser usado por
+  testes de canal.
 
-  Such tests rely on `Phoenix.ChannelTest` and also
-  import other functionality to make it easier
-  to build common data structures and query the data layer.
+  Esses testes contam com `Phoenix.ChannelTest` e também
+  importe outra funcionalidade para torná-lo mais fácil
+  para construir estruturas de dados comuns e consultar a camada de dados.
 
-  Finally, if the test case interacts with the database,
-  we enable the SQL sandbox, so changes done to the database
-  are reverted at the end of every test. If you are using
-  PostgreSQL, you can even run database tests asynchronously
-  by setting `use RocketpayWeb.ChannelCase, async: true`, although
-  this option is not recommended for other databases.
+  Finalmente, se o caso de teste interagir com o banco de dados,
+  habilitamos a sandbox SQL, portanto, as alterações feitas no banco de dados
+  são revertidos no final de cada teste. Se você estiver usando
+  PostgreSQL, você pode até mesmo executar testes de banco de dados de forma assíncrona
+  definindo `use RocketpayWeb.ChannelCase, async: true`, embora
+  esta opção não é recomendada para outros bancos de dados.
   """
 
   use ExUnit.CaseTemplate

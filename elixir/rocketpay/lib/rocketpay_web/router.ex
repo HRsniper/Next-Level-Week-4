@@ -32,13 +32,13 @@ defmodule RocketpayWeb.Router do
     post "/accounts/transaction", AccountsController, :transaction
   end
 
-  # Enables LiveDashboard only for development
+  # Habilita LiveDashboard apenas para desenvolvimento
   #
-  # If you want to use the LiveDashboard in production, you should put
-  # it behind authentication and allow only admins to access it.
-  # If your application does not have an admins-only section yet,
-  # you can use Plug.BasicAuth to set up some basic authentication
-  # as long as you are also using SSL (which you should anyway).
+  # Se você deseja usar o LiveDashboard na produção, você deve colocar
+  # por trás da autenticação e permitir que apenas administradores o acessem.
+  # Se o seu aplicativo ainda não tiver uma seção exclusiva para administradores,
+  # você pode usar Plug.BasicAuth para configurar alguma autenticação básica
+  # contanto que você também esteja usando SSL (o que você deve fazer de qualquer maneira).
   if Mix.env() in [:dev, :test] do
     import Phoenix.LiveDashboard.Router
 

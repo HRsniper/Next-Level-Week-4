@@ -1,29 +1,29 @@
 defmodule RocketpayWeb.ErrorHelpers do
   @moduledoc """
-  Conveniences for translating and building error messages.
+  Conveniências para traduzir e construir mensagens de erro.
   """
 
   @doc """
-  Translates an error message using gettext.
+  Traduz uma mensagem de erro usando gettext.
   """
   def translate_error({msg, opts}) do
-    # When using gettext, we typically pass the strings we want
-    # to translate as a static argument:
+    # Ao usar gettext, normalmente passamos as strings que queremos
+    # para traduzir como um argumento estático:
     #
-    #     # Translate "is invalid" in the "errors" domain
-    #     dgettext("errors", "is invalid")
+    # # Traduzir "é inválido" no domínio "erros"
+    # dgettext ("erros", "é inválido")
     #
-    #     # Translate the number of files with plural rules
-    #     dngettext("errors", "1 file", "%{count} files", count)
+    # # Traduzir o número de arquivos com regras plurais
+    # dngettext ("erros", "1 arquivo", "% {contagem} arquivos", contagem)
     #
-    # Because the error messages we show in our forms and APIs
-    # are defined inside Ecto, we need to translate them dynamically.
-    # This requires us to call the Gettext module passing our gettext
-    # backend as first argument.
+    # Porque as mensagens de erro que mostramos em nossos formulários e APIs
+    # são definidos dentro do Ecto, precisamos traduzi-los dinamicamente.
+    # Isso exige que chamemos o módulo Gettext passando nosso gettext
+    # backend como primeiro argumento.
     #
-    # Note we use the "errors" domain, which means translations
-    # should be written to the errors.po file. The :count option is
-    # set by Ecto and indicates we should also apply plural rules.
+    # Observe que usamos o domínio "erros", o que significa traduções
+    # deve ser gravado no arquivo errors.po. A opção: count é
+    # definido por Ecto e indica que também devemos aplicar regras plurais.
     if count = opts[:count] do
       Gettext.dngettext(RocketpayWeb.Gettext, "errors", msg, msg, count, opts)
     else

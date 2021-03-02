@@ -1,7 +1,8 @@
-# In this file, we load production configuration and secrets
-# from environment variables. You can also hardcode secrets,
-# although such is generally not recommended and you have to
-# remember to add this file to your .gitignore.
+# Neste arquivo, carregamos a configuração de produção e os segredos
+# de variáveis de ambiente. Você também pode codificar segredos,
+# embora isso geralmente não seja recomendado e você tenha que
+# lembre-se de adicionar este arquivo ao seu .gitignore.
+
 use Mix.Config
 
 database_url =
@@ -30,12 +31,9 @@ config :rocketpay, RocketpayWeb.Endpoint,
   ],
   secret_key_base: secret_key_base
 
-# ## Using releases (Elixir v1.9+)
-#
-# If you are doing OTP releases, you need to instruct Phoenix
-# to start each relevant endpoint:
-#
+# Se você estiver fazendo lançamentos OTP, você precisa instruir o Phoenix
+# para iniciar cada endpoint relevante:
 #     config :rocketpay, RocketpayWeb.Endpoint, server: true
 #
-# Then you can assemble a release by calling `mix release`.
-# See `mix help release` for more information.
+# Então você pode montar uma versão chamando `mix release`.
+# Veja `mix help release` para mais informações.

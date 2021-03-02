@@ -1,11 +1,17 @@
-# Script for populating the database. You can run it as:
+# Script para preencher o banco de dados. Você pode executá-lo como:
+# mix run priv/repo/seed.exs
 #
-#     mix run priv/repo/seeds.exs
+# Dentro do script, você pode ler e escrever em qualquer um de seus
+# repositórios diretamente:
+
+Rocketpay.Repo.insert!(%Rocketpay.User{
+  name: "Hercules R.",
+  age: 23,
+  email: "hercules@r.com",
+  password: "123456",
+  nickname: "HRsniper"
+})
+
 #
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     Rocketpay.Repo.insert!(%Rocketpay.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+# Recomendamos o uso das funções bang (`insert!`, `update!`
+# e assim por diante), pois eles falharão se algo der errado.

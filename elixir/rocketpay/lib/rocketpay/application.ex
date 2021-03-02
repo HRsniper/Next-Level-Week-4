@@ -1,32 +1,32 @@
 defmodule Rocketpay.Application do
-  # See https://hexdocs.pm/elixir/Application.html
-  # for more information on OTP Applications
+  # Veja https://hexdocs.pm/elixir/Application.html
+  # para obter mais informações sobre aplicativos OTP
   @moduledoc false
 
   use Application
 
   def start(_type, _args) do
     children = [
-      # Start the Ecto repository
+      # Inicie o repositório Ecto
       Rocketpay.Repo,
-      # Start the Telemetry supervisor
+      # Inicie o supervisor de telemetria
       RocketpayWeb.Telemetry,
-      # Start the PubSub system
+      # Inicie o sistema PubSub
       {Phoenix.PubSub, name: Rocketpay.PubSub},
-      # Start the Endpoint (http/https)
+      # Inicie o Endpoint (http/https)
       RocketpayWeb.Endpoint
-      # Start a worker by calling: Rocketpay.Worker.start_link(arg)
+      # Inicie um trabalhador (worker) chamando: Rocketpay.Worker.start_link(arg)
       # {Rocketpay.Worker, arg}
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
+    # Veja https://hexdocs.pm/elixir/Supervisor.html
+    # para outras estratégias e opções com suporte
     opts = [strategy: :one_for_one, name: Rocketpay.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
-  # Tell Phoenix to update the endpoint configuration
-  # whenever the application is updated.
+  # Diga ao Phoenix para atualizar a configuração do endpoint
+  # sempre que o aplicativo for atualizado.
   def config_change(changed, _new, removed) do
     RocketpayWeb.Endpoint.config_change(changed, removed)
     :ok

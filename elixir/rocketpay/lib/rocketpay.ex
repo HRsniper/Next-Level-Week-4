@@ -1,10 +1,9 @@
 defmodule Rocketpay do
   @moduledoc """
-  Rocketpay keeps the contexts that define your domain
-  and business logic.
+  Rocketpay mantém os contextos que definem seu domínio e lógica de negócios.
 
-  Contexts are also responsible for managing your data, regardless
-  if it comes from the database, an external API or others.
+  Os contextos também são responsáveis por gerenciar seus dados, independentemente
+  se vier do banco de dados, uma API externa ou outros.
   """
 
   alias Rocketpay.Users.Create, as: UserCreate

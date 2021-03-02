@@ -1,17 +1,17 @@
 defmodule Rocketpay.DataCase do
   @moduledoc """
-  This module defines the setup for tests requiring
-  access to the application's data layer.
+  Este módulo define a configuração para testes que requerem
+  acesso à camada de dados do aplicativo.
 
-  You may define functions here to be used as helpers in
-  your tests.
+  Você pode definir funções aqui para serem usadas como ajudantes em
+  seus testes.
 
-  Finally, if the test case interacts with the database,
-  we enable the SQL sandbox, so changes done to the database
-  are reverted at the end of every test. If you are using
-  PostgreSQL, you can even run database tests asynchronously
-  by setting `use Rocketpay.DataCase, async: true`, although
-  this option is not recommended for other databases.
+  Finalmente, se o caso de teste interagir com o banco de dados,
+  habilitamos a sandbox SQL, portanto, as alterações feitas no banco de dados
+  são revertidos no final de cada teste. Se você estiver usando
+  PostgreSQL, você pode até mesmo executar testes de banco de dados de forma assíncrona
+  definindo `use Rocketpay.DataCase, async: true`, embora
+  esta opção não é recomendada para outros bancos de dados.
   """
 
   use ExUnit.CaseTemplate

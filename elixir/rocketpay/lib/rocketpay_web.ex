@@ -1,20 +1,19 @@
 defmodule RocketpayWeb do
   @moduledoc """
-  The entrypoint for defining your web interface, such
-  as controllers, views, channels and so on.
-
-  This can be used in your application as:
-
+  O ponto de entrada para definir sua interface da web, como
+  como controladores, visualizações, canais e assim por diante.
+  Isso pode ser usado em seu aplicativo como:
       use RocketpayWeb, :controller
       use RocketpayWeb, :view
+      use RocketpayWeb, :channel
 
-  The definitions below will be executed for every view,
-  controller, etc, so keep them short and clean, focused
-  on imports, uses and aliases.
+  As definições abaixo serão executadas para cada visão,
+  controlador, etc..., então mantenha-os curtos e claros, focados
+  sobre importações, usos e apelidos.
 
-  Do NOT define functions inside the quoted expressions
-  below. Instead, define any helper function in modules
-  and import those modules here.
+  NÃO defina funções dentro das expressões entre aspas abaixo.
+  Em vez disso, defina qualquer função auxiliar nos módulos
+  e importe esses módulos aqui.
   """
 
   def controller do

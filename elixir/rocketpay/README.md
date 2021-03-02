@@ -1,19 +1,20 @@
 # Rocketpay
 
-To start your Phoenix server:
+Para iniciar o servidor Phoenix:
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server`
+- Instale dependências com `mix deps.get`
+- Crie e migre seu banco de dados com `mix ecto.setup`
+- Inicie o endpoint Phoenix com `mix phx.server`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+Agora você pode visitar [`localhost: 4000`] (http: // localhost: 4000) de seu navegador.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+<!-- Pronto para entrar em produção? Por favor verifique nossos guias de implantação
+(https://hexdocs.pm/phoenix/deployment.html). -->
 
-## Learn more
+### Saiba mais
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+- Official website: https://www.phoenixframework.org/
+- Guides: https://hexdocs.pm/phoenix/overview.html
+- Docs: https://hexdocs.pm/phoenix
+- Forum: https://elixirforum.com/c/phoenix-forum
+- Source: https://github.com/phoenixframework/phoenix

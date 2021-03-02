@@ -1,24 +1,24 @@
 defmodule RocketpayWeb.Gettext do
   @moduledoc """
-  A module providing Internationalization with a gettext-based API.
+  Um módulo que fornece internacionalização com uma API baseada em gettext.
 
-  By using [Gettext](https://hexdocs.pm/gettext),
-  your module gains a set of macros for translations, for example:
+  Usando [Gettext] (https://hexdocs.pm/gettext),
+  seu módulo ganha um conjunto de macros para traduções, por exemplo:
 
       import RocketpayWeb.Gettext
 
-      # Simple translation
-      gettext("Here is the string to translate")
+      # Tradução simples
+      gettext ("Aqui está a string a ser traduzida")
 
-      # Plural translation
-      ngettext("Here is the string to translate",
-               "Here are the strings to translate",
+      # Tradução no plural
+      ngettext ("Aqui está a string a ser traduzida",
+               "Aqui estão as strings a serem traduzidas",
                3)
 
-      # Domain-based translation
-      dgettext("errors", "Here is the error message to translate")
+      # Tradução baseada em domínio
+      dgettext ("errors", "Aqui está a mensagem de erro a ser traduzida")
 
-  See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
+  Consulte o [Gettext Docs] (https://hexdocs.pm/gettext) para obter detalhes sobre o uso.
   """
   use Gettext, otp_app: :rocketpay
 end

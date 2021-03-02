@@ -4,14 +4,14 @@ defmodule RocketpayWeb.ErrorView do
   import Ecto.Changeset, only: [traverse_errors: 2]
   alias Ecto.Changeset
 
-  # If you want to customize a particular status code
-  # for a certain format, you may uncomment below.
+  # Se você deseja personalizar um código de status específico
+  # para um determinado formato, você pode descomentar abaixo.
   # def render("500.json", _assigns) do
   #   %{errors: %{detail: "Internal Server Error"}}
   # end
 
-  # By default, Phoenix returns the status message from
-  # the template name. For example, "404.json" becomes
+  # Por padrão, o Phoenix retorna a mensagem de status de
+  # o nome do modelo. Por exemplo, "404.json" torna-se
   # "Not Found".
   def template_not_found(template, _assigns) do
     %{errors: %{detail: Phoenix.Controller.status_message_from_template(template)}}
