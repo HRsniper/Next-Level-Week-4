@@ -11,7 +11,7 @@ defmodule RocketpayWeb.SessionController do
     # caso erro with joga o erro para FallbackController
     with {:ok, %User{} = user} <- SignIn.run(email, password) do
       connection
-      |> put_status(:created)
+      |> put_status(:ok)
       |> render("session.json", user: user)
     end
   end
