@@ -11,6 +11,16 @@ defmodule RocketpayWeb.Router do
     plug :basic_auth, Application.compile_env(:rocketpay, :basic_auth)
   end
 
+  pipeline :authenticated do
+    plug :accepts, ["json"]
+    plug RocketpayWeb.AuthAccessPipeline
+  end
+
+  scope "/api", RocketpayWeb do
+    pipe_through [:api, :authenticated]
+    post "/accounts/:id/deposit", AccountsController, :deposit
+  end
+
   scope "/api", RocketpayWeb do
     # pipe_through obedece as regras definidas no plug do pipeline
     pipe_through :api
@@ -20,16 +30,12 @@ defmodule RocketpayWeb.Router do
     post "/users", UsersController, :create
 
     post "/sign_in", SessionController, :create
-
-    # post "/accounts/:id/deposit", AccountsController, :deposit
-    # post "/accounts/:id/withdraw", AccountsController, :withdraw
-    # post "/accounts/transaction", AccountsController, :transaction
   end
 
   scope "/api", RocketpayWeb do
     pipe_through [:api, :auth]
 
-    post "/accounts/:id/deposit", AccountsController, :deposit
+    # post "/accounts/:id/deposit", AccountsController, :deposit
     post "/accounts/:id/withdraw", AccountsController, :withdraw
     post "/accounts/transaction", AccountsController, :transaction
   end
