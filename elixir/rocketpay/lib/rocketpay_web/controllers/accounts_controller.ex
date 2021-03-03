@@ -10,6 +10,9 @@ defmodule RocketpayWeb.AccountsController do
   def deposit(connection, params) do
     # caso erro with joga o ero para FallbackController
     with {:ok, %Account{} = account} <- Rocketpay.deposit(params) do
+      # user = RocketpayWeb.Guardian.Plug.current_resource(connection)
+      # IO.puts(user.id)
+
       connection
       |> put_status(:ok)
       |> render("update.json", account: account)
