@@ -82,3 +82,4 @@ open cover/excoveralls.html
 #nerverstoplearning
 #missioncompleted
 ```
+iex> Rocketpay.Users.SignIn.run("token@gmail.com", "12345")
