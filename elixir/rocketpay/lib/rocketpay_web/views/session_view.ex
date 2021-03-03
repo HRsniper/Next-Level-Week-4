@@ -3,12 +3,12 @@ defmodule RocketpayWeb.SessionView do
 
   alias Rocketpay.{Account, User}
 
-  def render("session.json", %{user: user}) do
+  def render("session.json", %{user: %User{email: email, password_hash: password}}) do
     # retorno
     %{
       message: "Authenticated",
-      email: user.email,
-      password: user.password_hash
+      email: email,
+      password: password
     }
   end
 end
