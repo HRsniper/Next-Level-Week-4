@@ -83,3 +83,5 @@ open cover/excoveralls.html
 #missioncompleted
 ```
 iex> Rocketpay.Users.SignIn.run("token@gmail.com", "12345")
+
+iex> Rocketpay.Users.GetResource.get_resource_by_id!("d96fe790-2c9b-46df-94c7-5d581bec2932")

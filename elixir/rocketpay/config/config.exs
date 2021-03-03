@@ -28,6 +28,11 @@ config :rocketpay, :basic_auth,
   username: "hercules",
   password: "elixir"
 
+config :rocketpay_web, RocketpayWeb.Guardian,
+  issuer: "rocketpay_web",
+  # Chave secreta. Você pode usar` mix guardian.gen.secret` para obter uma
+  secret_key: "DxmQHFt7V20x4f2yZcRgys3hsyiN6+YbSO/MWQX6hd5q5N9ZNJM6Upf1KoEHfuot"
+
 # Configura o Logger do Elixir
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

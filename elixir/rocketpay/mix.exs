@@ -52,7 +52,8 @@ defmodule Rocketpay.MixProject do
       # {:bcrypt_elixir, "~> 2.0"},
       {:pbkdf2_elixir, "~> 1.3"},
       {:decimal, "~> 2.0"},
-      {:excoveralls, "~> 0.14.0", only: [:test]}
+      {:excoveralls, "~> 0.14.0", only: [:test]},
+      {:guardian, "~> 2.0"}
     ]
   end
 
