@@ -1,5 +1,5 @@
 defmodule RocketpayWeb.Guardian do
-  use Guardian, otp_app: :rocketpay_web
+  use Guardian, otp_app: :rocketpay
 
   alias Rocketpay.Users.GetResource
 

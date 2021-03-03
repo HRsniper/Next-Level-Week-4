@@ -3,6 +3,7 @@ defmodule RocketpayWeb.SessionController do
 
   alias Rocketpay.User
   alias Rocketpay.Users.SignIn
+  alias RocketpayWeb.Guardian
 
   # Registra o plug a ser chamado como um fallback para a ação do controlador.
   action_fallback RocketpayWeb.FallbackController
@@ -10,9 +11,13 @@ defmodule RocketpayWeb.SessionController do
   def create(connection, %{"email" => email, "password" => password}) do
     # caso erro with joga o erro para FallbackController
     with {:ok, %User{} = user} <- SignIn.run(email, password) do
+      {:ok, token, _claims} = Guardian.encode_and_sign(user)
+
       connection
       |> put_status(:ok)
-      |> render("session.json", user: user)
+      # para coloca token no header
+      # |> put_resp_header(:jwt_token, token) |> render("session.json", user: user)
+      |> render("session.json", user: user, token: token)
     end
   end
 end
