@@ -37,10 +37,12 @@ const Countdown = () => {
               onClick={resetCountdown}
             >
               Abandonar ciclo
+              <img src="icons/close.svg" alt="close"/>
             </button>
           ) : (
             <button type="button" className={styles.countdownButton} onClick={startCountdown}>
               Iniciar um ciclo
+              <img src="icons/start.svg" alt="start"/>
             </button>
           )}
         </>
